@@ -1,0 +1,17 @@
+ [color=#B50F1D] ███░██████░███[/color]
+ [color=#B50F1D] █░░░██░░░░░░░█[/color]    
+ [color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Sindicato[/head]
+ [color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Estação {{STATION.SN}}[/bold]
+ [color=#B50F1D] ███░██████░███[/color]
+=============================================
+                NOTA SOBRE O INÍCIO DAS AÇÕES MILITARES
+=============================================
+Tempo desde o início do turno e data:
+Apelido do agente:
+
+Desprezíveis ratos corporativos da NanoTrasen! O Sindicato anuncia oficialmente o início das ações militares contra vocês, bem como o início da operação para exterminá-los.
+Razão para apresentação da nota:
+
+=============================================
+                             [italic]Espaço para carimbos[/italic]
+

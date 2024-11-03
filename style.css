@@ -1,0 +1,50 @@
+/* Variables */
+/*
+:root {
+    --button-color: #464950;
+    --button-hover-color: #575b61;
+    --button-selected-color: #3e6c45;
+    --button-danger-color: #d43b3b;
+
+    background-color: #303031;
+    color: white;
+}
+
+.button {
+    background-color: var(--button-color);
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border: none;
+    height: 27px;
+    cursor: pointer;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    margin: -20px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: black;
+}
+
+.button:hover {
+    background-color: var(--button-hover-color);
+}
+
+.button.selected {
+    background-color: var(--button-selected-color);
+}
+
+.button.danger {
+    background-color: var(--button-danger-color);
+}
+
+.button:active {
+    background-color: var(--button-selected-color);
+}
+*/

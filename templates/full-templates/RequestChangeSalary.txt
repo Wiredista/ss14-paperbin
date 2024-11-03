@@ -1,0 +1,18 @@
+ [color=#1b487e]███░███░░░░██░░░░[/color]
+ [color=#1b487e]░██░████░░░██░░░░[/color]      
+ [color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
+ [color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação {{STATION.SN}}[/bold]
+ [color=#1b487e]░░░░██░░░████░███[/color]
+=============================================
+        PEDIDO DE ALTERAÇÃO DE SALÁRIO
+=============================================
+Tempo desde o início do turno e data:
+Redator do documento:
+Posição do redator:
+
+Eu, (NOME), no cargo de (nome completo do cargo), solicito a avaliação da possibilidade de aumento/redução do salário em (quantidade ou percentagem) para o funcionário (NOME) no cargo de (nome completo do cargo)/departamento (nome do departamento)/turno atual.
+Razão para o aumento/redução do salário:
+
+=============================================
+                             [italic]Espaço para carimbos[/italic]
+

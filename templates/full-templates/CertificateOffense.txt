@@ -1,0 +1,25 @@
+ [color=#1b487e]███░███░░░░██░░░░[/color]
+ [color=#1b487e]░██░████░░░██░░░░[/color]      
+ [color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
+ [color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação {{STATION.SN}}[/bold]
+ [color=#1b487e]░░░░██░░░████░███[/color]
+=============================================
+            CERTIFICADO DE INFRAÇÃO
+=============================================
+Tempo desde o início do turno e data:
+Redator do documento:
+Posição do redator:
+
+Eu, (NOME), no cargo de (nome completo do cargo), certifico infrações/voluntariamente admito ter cometido infrações previstas pelos artigos:
+(enumeração de artigos)
+Sobre este incidente, posso esclarecer o seguinte.
+Local do crime:
+Motivações para cometer o crime:
+Contra quem o crime foi cometido:
+Natureza e extensão do dano causado pelo crime:
+Cúmplices no crime:
+Cronologia completa dos eventos:
+
+=============================================
+                             [italic]Espaço para carimbos[/italic]
+

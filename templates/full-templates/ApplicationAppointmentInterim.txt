@@ -1,0 +1,18 @@
+ [color=#1b487e]███░███░░░░██░░░░[/color]
+ [color=#1b487e]░██░████░░░██░░░░[/color]      
+ [color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
+ [color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação {{STATION.SN}}[/bold]
+ [color=#1b487e]░░░░██░░░████░███[/color]
+=============================================
+                REQUERIMENTO DE NOMEAÇÃO INTERINA
+=============================================
+Tempo desde o início do turno e data:
+Redator do documento:
+Posição do redator:
+
+Eu, (NOME), no cargo de (nome completo do cargo), solicito a aprovação da minha nomeação para o cargo de Interino Chefe (nome completo do departamento)/Capitão.
+Ao assumir o cargo, comprometo-me a seguir os Procedimentos Operacionais Padrão e, até a chegada do Chefe (nome completo do departamento)/Capitão do Comando Central, garantir a ordem e a gestão do departamento, assegurando a preservação dos itens especialmente valiosos e equipamentos confiados a mim.
+
+Na chegada do Chefe do departamento/Capitão do Comando Central, comprometo-me a devolver o acesso elevado, os itens especialmente valiosos e o equipamento.
+=============================================
+                             [italic]Espaço para carimbos[/italic]

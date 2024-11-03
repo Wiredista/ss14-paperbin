@@ -1,0 +1,17 @@
+ [color=#B50F1D] ███░██████░███[/color]
+ [color=#B50F1D] █░░░██░░░░░░░█[/color]    
+ [color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Sindicato[/head]
+ [color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Estação {{STATION.SN}}[/bold]
+ [color=#B50F1D] ███░██████░███[/color]
+=============================================
+                    AVISO DE LIQUIDAÇÃO
+=============================================
+Tempo desde o início do turno e data:
+Apelido do agente:
+
+Estimado (NOME), no cargo de (nome completo do cargo)! A administração do Sindicato tomou a decisão de liquidá-lo imediatamente durante este turno. Pedimos que prepare antecipadamente um testamento e o envie ao Departamento Médico da estação. A destruição do seu corpo será realizada pelas forças do Sindicato.
+Motivo da liquidação:
+
+=============================================
+                             [italic]Espaço para carimbos[/italic]
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="" method="get">
+        <label for="stationName">Código da estação:</label>
+        <input type="text" id="stationName" placeholder="XX-###"><br>
+
+        <input type="radio" name="bodyOrTemplate" id="template"> Usar template: 
+        <select name="template" id=""></select> <br>
+        
+        <input type="radio" name="bodyOrTemplate" id="body"> Documento personalizado: <br>
+        <label for="documentTitle">Título:</label>
+        <input type="text" id="documentTitle"> <br>
+        <label for="documentBody">Corpo:</label>
+        <textarea id="documentBody"></textarea> <br>
+        
+        <input type="submit" value="Enviar" class="button">
+    </form>
+    <textarea name="" id="ouput" ></textarea>
+    <script>
+        $.get("templates/full-templates/names.json", function(data){
+            for (let key in data) {
+                value = data[key];
+                let option = $("<option>").val(value).text(key);
+                $("select").append(option);
+            }
+        });
+
+        // Preload base template for performance
+        let baseTemplate;
+        $.get("templates/base-ptbr.txt", function(data){
+            baseTemplate = data;
+        });
+
+        $("form").submit(function(e){
+            e.preventDefault();
+            const bodyOrTemplate = $("input[name=bodyOrTemplate]:checked").attr("id");
+            if (bodyOrTemplate == "template") {
+                const template = $("select").val();
+                const stationName = $("#stationName").val();
+                const documentTitle = $("#documentTitle").val();
+                const documentBody = $("#documentBody").val();
+                const path = "templates/full-templates/" + template;
+                $.get(path, function(data){
+                    data = data.replace("{{STATION.SN}}", stationName);
+                    
+                    $("#ouput").val(data);
+                });
+            }
+            else if (bodyOrTemplate == "body") {
+                const stationName = $("#stationName").val();
+                const documentTitle = $("#documentTitle").val();
+                const documentBody = $("#documentBody").val();
+
+                let string = baseTemplate;
+                string = string.replace("{{STATION.SN}}", stationName);
+                string = string.replace("{{DOCUMENT.TITLE}}", documentTitle);
+                string = string.replace("{{DOCUMENT.BODY}}", documentBody);
+
+                $("#ouput").val(string);
+            }
+        });
+    </script>
+</body>
+</html>
