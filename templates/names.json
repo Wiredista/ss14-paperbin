@@ -28,5 +28,7 @@
     "ORDEM DE ELOGIO": "OrderEncouragement.txt",
     "DECLARAÇÃO DE RESIGNAÇÃO": "LetterResignation.txt",
     "RELATÓRIO DE DESEMPENHO DO DEPARTAMENTO": "ReporDepartment.txt",
-    "RELATÓRIO DA REUNIÃO DOS CHEFES": "ReportOnTheChaptersMeeting.txt"
+    "RELATÓRIO DA REUNIÃO DOS CHEFES": "ReportOnTheChaptersMeeting.txt",
+    "VAZIO NANOTRASEN": "base-nanotrasen.txt",
+    "VAZIO SINDICATO": "base-syndicate.txt"
 }
