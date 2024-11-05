@@ -72,7 +72,7 @@
     </form>
     <script>
         // Load templates into select
-        $.get("templates/names.json", function(data){
+        $.get("templates.json", function(data){
             for (let key in data) {
                 value = data[key];
                 let option = $("<option>").val(value).text(key);
