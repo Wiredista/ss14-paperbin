@@ -84,8 +84,8 @@
         let baseTemplateNT;
         let baseTemplateSyndicate;
 
-        $.get("templates/base-nanotrasen.txt", (data) => { baseTemplate = data; });
-        $.get("templates/base-syndicate.txt",  (data) => { baseTemplate = data; });
+        $.get("templates/base-nanotrasen.txt", (data) => { baseTemplateNT = data; });
+        $.get("templates/base-syndicate.txt",  (data) => { baseTemplateSyndicate = data; });
 
         // Form submission
         $("form").submit(function(e){
@@ -111,7 +111,16 @@
                 const stationName = $("#stationName").val();
                 const documentTitle = $("#documentTitle").val();
                 const documentBody = $("#documentBody").val();
+                
+                // Choose base template based on affiliation
+                let baseTemplate;
+                if ($("input[name=syndicateOrNano]:checked").attr("id") == "syndicate") {
+                    baseTemplate = baseTemplateSyndicate;
+                } else {
+                    baseTemplate = baseTemplateNT;
+                }
 
+                // Replace placeholders
                 let string = baseTemplate;
                 string = string.replace("{{STATION.SN}}", stationName);
                 string = string.replace("{{DOCUMENT.TITLE}}", documentTitle);
