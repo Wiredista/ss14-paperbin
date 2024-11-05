@@ -1,0 +1,12 @@
+ [color=#B50F1D] ███░██████░███[/color]
+ [color=#B50F1D] █░░░██░░░░░░░█[/color]    
+ [color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Sindicato[/head]
+ [color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Estação {{STATION.SN}}[/bold]
+ [color=#B50F1D] ███░██████░███[/color]
+=============================================
+                            [bold]{{DOCUMENT.TITLE}}[/bold]
+=============================================
+{{DOCUMENT.BODY}}
+
+=============================================
+                             [italic]Espaço para carimbos[/italic]

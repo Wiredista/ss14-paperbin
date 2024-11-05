@@ -3,28 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="jquery-3.7.1.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <title>SS14 Paperbin</title>
+    <script src="vendor/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <script src="vendor/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <form action="" method="get">
-        <label for="stationName">Código da estação:</label>
-        <input type="text" id="stationName" placeholder="XX-###"><br>
+    <!-- Header -->
+    <header class="container mt-4">
+        <h1>Paperbin</h1>
+        <p>Este é um gerador de documentos para uso no jogo Space Station 14. Ele permite a criação de documentos personalizados ou a partir de templates.</p>
+    </header>
 
-        <input type="radio" name="bodyOrTemplate" id="template"> Usar template: 
-        <select name="template" id=""></select> <br>
+    <!-- Form -->
+    <form action="" method="get" class="container card p-4">
+        <div class="form-group">
+            <label for="stationName">Código da estação:</label>
+            <input type="text" id="stationName" class="form-control" placeholder="XX-###">
+        </div>
+
+        <!-- Template -->
+        <div class="form-check mt-3">
+            <input type="radio" name="bodyOrTemplate" id="template" class="form-check-input" checked>
+            <label class="form-check-label" for="template">Usar template:</label>
+        </div>
+        <div class="form-group">
+            <select name="template" id="" class="form-control"></select>
+        </div>
+
+        <!-- Custom document -->
+        <div class="form-check mt-3">
+            <input type="radio" name="bodyOrTemplate" id="body" class="form-check-input">
+            <label class="form-check-label" for="body">Documento personalizado:</label>
+        </div>
+        <div class="card p-4">
+            <!-- Syndicate or NanoTrasen -->
+            <div class="form-group">
+                <label for="syndicateOrNano">Filiação:</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="syndicateOrNano" id="syndicate" class="form-check-input">
+                <label class="form-check-label" for="syndicate">Sindicato</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="syndicateOrNano" id="nano" class="form-check-input" checked>
+                <label class="form-check-label" for="nano">NanoTrasen</label>
+            </div>
+            <div class="form-group">
+                <label for="documentTitle">Título:</label>
+                <input type="text" id="documentTitle" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="documentBody">Corpo:</label>
+                <textarea id="documentBody" class="form-control"></textarea>
+            </div>
+        </div>  
         
-        <input type="radio" name="bodyOrTemplate" id="body"> Documento personalizado: <br>
-        <label for="documentTitle">Título:</label>
-        <input type="text" id="documentTitle"> <br>
-        <label for="documentBody">Corpo:</label>
-        <textarea id="documentBody"></textarea> <br>
-        
-        <input type="submit" value="Enviar" class="button">
+        <div class="form-group mt-3">
+            <button type="submit" class="btn btn-primary float-end">Enviar</button>
+        </div>
+
+        <!-- Output -->
+        <div class="form-group mt-3">
+            <label for="ouput">Saída:</label>
+            <textarea name="" id="ouput" class="form-control" rows="5"></textarea>
+            <button class="btn btn-primary mt-2" onclick="$('#ouput').select(); document.execCommand('copy');">Copiar</button>
+        </div>
     </form>
-    <textarea name="" id="ouput" ></textarea>
     <script>
+        // Load templates into select
         $.get("templates/full-templates/names.json", function(data){
             for (let key in data) {
                 value = data[key];
@@ -33,15 +80,19 @@
             }
         });
 
-        // Preload base template for performance
-        let baseTemplate;
-        $.get("templates/base-ptbr.txt", function(data){
-            baseTemplate = data;
-        });
+        // Preload base templates for performance
+        let baseTemplateNT;
+        let baseTemplateSyndicate;
 
+        $.get("templates/base-nanotrasen.txt", (data) => { baseTemplate = data; });
+        $.get("templates/base-syndicate.txt",  (data) => { baseTemplate = data; });
+
+        // Form submission
         $("form").submit(function(e){
             e.preventDefault();
             const bodyOrTemplate = $("input[name=bodyOrTemplate]:checked").attr("id");
+
+            // Template handling
             if (bodyOrTemplate == "template") {
                 const template = $("select").val();
                 const stationName = $("#stationName").val();
@@ -54,6 +105,8 @@
                     $("#ouput").val(data);
                 });
             }
+
+            // Custom document handling
             else if (bodyOrTemplate == "body") {
                 const stationName = $("#stationName").val();
                 const documentTitle = $("#documentTitle").val();
@@ -68,5 +121,10 @@
             }
         });
     </script>
+
+    <!-- Footer -->
+    <footer class="container mt-5 text-center">
+        <p>Feito por <a href="https://github.com/Wiredista">Wiredista</a></p>
+    </footer>   
 </body>
 </html>
