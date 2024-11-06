@@ -6,6 +6,10 @@
 =============================================
                             [bold]{{DOCUMENT.TITLE}}[/bold]
 =============================================
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
+
 {{DOCUMENT.BODY}}
 
 =============================================

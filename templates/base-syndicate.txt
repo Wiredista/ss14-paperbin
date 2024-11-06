@@ -6,6 +6,9 @@
 =============================================
                             [bold]{{DOCUMENT.TITLE}}[/bold]
 =============================================
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Apelido do agente: {{AUTHOR.NAME}}
+
 {{DOCUMENT.BODY}}
 
 =============================================
