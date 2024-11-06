@@ -21,43 +21,68 @@
             <label for="stationName">Código da estação:</label>
             <input type="text" id="stationName" class="form-control" placeholder="XX-###">
         </div>
-
-        <!-- Template -->
-        <div class="form-check mt-3">
-            <input type="radio" name="bodyOrTemplate" id="template" class="form-check-input" checked>
-            <label class="form-check-label" for="template">Usar template:</label>
+        <div class="form-group">
+            <label for="time">Tempo desde o início do turno:</label>
+            <div class="input-group">
+                <input type="text" id="time" class="form-control" placeholder="00:00:00" aria-describedby="btn-applyTime">
+                <button class="btn btn-secondary" id="btn-applyTime">Cronometrar</button>
+            </div>
         </div>
         <div class="form-group">
-            <select name="template" id="" class="form-control"></select>
+            <label for="author">Redator:</label>
+            <input type="text" id="author" class="form-control">
         </div>
-
-        <!-- Custom document -->
+        <div class="form-group">
+            <label for="authorRank">Posição do redator:</label>
+            <input type="text" id="authorRank" class="form-control">
+        </div>
         <div class="form-check mt-3">
-            <input type="radio" name="bodyOrTemplate" id="body" class="form-check-input">
-            <label class="form-check-label" for="body">Documento personalizado:</label>
+            <input type="radio" name="bodyOrTemplate" id="template" class="form-check-input" checked>
+            <label class="form-check-label" for="template">Usar template</label>
         </div>
-        <div class="card p-4">
-            <!-- Syndicate or NanoTrasen -->
+        <div class="form-check">
+            <input type="radio" name="bodyOrTemplate" id="body" class="form-check-input">
+            <label class="form-check-label" for="body">Criar documento personalizado</label>
+        </div>
+        
+        <div class="mt-3"></div> <!-- Separator -->
+
+        <!-- Template -->
+        <div id="template-form">
             <div class="form-group">
-                <label for="syndicateOrNano">Filiação:</label>
+                <select name="template" id="templateSelector" class="form-control"></select>
             </div>
-            <div class="form-check">
-                <input type="radio" name="syndicateOrNano" id="syndicate" class="form-check-input">
-                <label class="form-check-label" for="syndicate">Sindicato</label>
+            <div class="mt-3"></div> <!-- Separator -->
+            <div class="card p-4" id="template-fields">
+                
             </div>
-            <div class="form-check">
-                <input type="radio" name="syndicateOrNano" id="nano" class="form-check-input" checked>
-                <label class="form-check-label" for="nano">NanoTrasen</label>
-            </div>
-            <div class="form-group">
-                <label for="documentTitle">Título:</label>
-                <input type="text" id="documentTitle" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="documentBody">Corpo:</label>
-                <textarea id="documentBody" class="form-control"></textarea>
-            </div>
-        </div>  
+        </div>
+        
+        <!-- Custom document -->
+        <div id="custom-form">
+            <div class="card p-4">
+                <!-- Syndicate or NanoTrasen -->
+                <div class="form-group">
+                    <label for="syndicateOrNano">Filiação:</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="syndicateOrNano" id="syndicate" class="form-check-input">
+                    <label class="form-check-label" for="syndicate">Sindicato</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" name="syndicateOrNano" id="nano" class="form-check-input" checked>
+                    <label class="form-check-label" for="nano">NanoTrasen</label>
+                </div>
+                <div class="form-group">
+                    <label for="documentTitle">Título:</label>
+                    <input type="text" id="documentTitle" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="documentBody">Corpo:</label>
+                    <textarea id="documentBody" class="form-control"></textarea>
+                </div>
+            </div>  
+        </div>
         
         <div class="form-group mt-3">
             <button type="submit" class="btn btn-primary float-end">Enviar</button>
@@ -88,51 +113,129 @@
         $.get("templates/base-syndicate.txt",  (data) => { baseTemplateSyndicate = data; });
 
         // Trigger form submission on template change
-        $("select").change(function(){
-            $("form").submit();
+        $("#templateSelector").change(function(){
+             $("form").submit();
         });
-        
+
+        // Trigger form change on radio change
+        $("input[name=bodyOrTemplate]").change(function(){
+            if ($(this).attr("id") == "template") {
+                $("#template-form").show();
+                $("#custom-form").hide();
+            } else {
+                $("#template-form").hide();
+                $("#custom-form").show();
+            }
+        });
+
+        // Timer button
+        $("#btn-applyTime").click(function(){
+            // 00:00:00 -> Get in-game time and start timer
+            let time = $("#time").val();
+            if (time == "") { time = "00:00:00"; }
+            const timeArray = time.split(":");
+            let seconds = parseInt(timeArray[0]) * 3600 + parseInt(timeArray[1]) * 60 + parseInt(timeArray[2]);
+            const timer = setInterval(() => {
+                seconds++;
+                const hours = Math.floor(seconds / 3600);
+                const minutes = Math.floor((seconds % 3600) / 60);
+                const secondsRemainder = seconds % 60;
+                $("#time").val(`${hours.toFixed(0).padStart(2, "0")}:${minutes.toFixed(0).padStart(2, "0")}:${secondsRemainder.toFixed(0).padStart(2, "0")}`);
+            }, 1000);
+        });
+
         // Form submission
-        $("form").submit(function(e){
+        $("form").submit(async function(e){
             e.preventDefault();
             const bodyOrTemplate = $("input[name=bodyOrTemplate]:checked").attr("id");
 
-            // Template handling
+            // Get common fields
+            const stationName = $("#stationName").val();
+            const time = $("#time").val();
+            const author = $("#author").val();
+            const authorRank = $("#authorRank").val();
+            const documentTitle = $("#documentTitle").val();
+            const documentBody = $("#documentBody").val();
+            
+            
+            let baseData = "";
+
+            // Template base data
             if (bodyOrTemplate == "template") {
-                const template = $("select").val();
-                const stationName = $("#stationName").val();
-                const documentTitle = $("#documentTitle").val();
-                const documentBody = $("#documentBody").val();
-                
+                const template = $("#templateSelector").val();                
                 const path = "templates/" + template;
-                $.get(path, function(data){
-                    data = data.replace("{{STATION.SN}}", stationName);    
-                    $("#ouput").val(data);
-                });
+                baseData = await $.get(path);
             }
 
-            // Custom document handling
+            // Custom document base data
             else if (bodyOrTemplate == "body") {
-                const stationName = $("#stationName").val();
-                const documentTitle = $("#documentTitle").val();
-                const documentBody = $("#documentBody").val();
-                
                 // Choose base template based on affiliation
-                let baseTemplate;
                 if ($("input[name=syndicateOrNano]:checked").attr("id") == "syndicate") {
-                    baseTemplate = baseTemplateSyndicate;
+                    baseData = baseTemplateSyndicate;
                 } else {
-                    baseTemplate = baseTemplateNT;
+                    baseData = baseTemplateNT;
                 }
-
-                // Replace placeholders
-                let string = baseTemplate;
-                string = string.replace("{{STATION.SN}}", stationName);
-                string = string.replace("{{DOCUMENT.TITLE}}", documentTitle);
-                string = string.replace("{{DOCUMENT.BODY}}", documentBody);
-
-                $("#ouput").val(string);
             }
+
+            // Replace fields
+            let outData = baseData;
+
+            outData = outData.replaceAll("{{STATION.SN}}", stationName);
+            outData = outData.replaceAll("{{STATION.TIME}}", time);
+            outData = outData.replaceAll("{{DOCUMENT.TITLE}}", documentTitle);
+            outData = outData.replaceAll("{{DOCUMENT.BODY}}", documentBody);
+            outData = outData.replaceAll("{{AUTHOR.NAME}}", author);
+            outData = outData.replaceAll("{{AUTHOR.POSITION}}", authorRank);
+
+            // Advanced document parsing
+            const fields = outData.match(/{{DOCUMENT.FIELD "(.*?)"}}/g);
+            if (fields != null) {
+                for (let i = 0; i < fields.length; i++) {
+                    const field = fields[i].match(/{{DOCUMENT.FIELD "(.*?)"}}/)[1];
+                    const value = $("#documentField-" + i).val();
+                    outData = outData.replace(`{{DOCUMENT.FIELD "${field}"}}`, value);
+                }
+            }
+
+            // Output
+            $("#ouput").val(outData);
+        });
+
+        // Advanced document parsing
+        $("#templateSelector").on("input", async function(){
+            // Get template text
+            const template = $("#templateSelector").val();
+            const path = "templates/" + template;
+            const data = await $.get(path);
+            
+            // Get fields
+            const fields = data.match(/{{DOCUMENT.FIELD "(.*?)"}}/g);
+            if (fields == null) { $("#template-fields").html(""); return; }
+
+            let html = "";
+            for (let i = 0; i < fields.length; i++) {
+                const field = fields[i].match(/{{DOCUMENT.FIELD "(.*?)"}}/)[1];
+                html += `<div class="form-group">
+                            <label for="documentField-${i}">${field}:</label>
+                            <input type="text" id="documentField-${i}" class="form-control">
+                        </div>`;
+            }
+            $("#template-fields").html(html);
+        });
+
+        // Initial form state
+        $(document).ready(function(){
+            // Select template
+            $("radio[name=bodyOrTemplate]").val("template");
+            $("#template-form").show();
+            $("#custom-form").hide();
+
+            // Select NanoTrasen
+            $("radio[name=syndicateOrNano]").val("nano");
+
+            // Select first template
+            $("#templateSelector").val($("#templateSelector option:first").val());
+            $("#templateSelector").trigger("input");
         });
     </script>
 
