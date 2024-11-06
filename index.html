@@ -87,6 +87,11 @@
         $.get("templates/base-nanotrasen.txt", (data) => { baseTemplateNT = data; });
         $.get("templates/base-syndicate.txt",  (data) => { baseTemplateSyndicate = data; });
 
+        // Trigger form submission on template change
+        $("select").change(function(){
+            $("form").submit();
+        });
+        
         // Form submission
         $("form").submit(function(e){
             e.preventDefault();
