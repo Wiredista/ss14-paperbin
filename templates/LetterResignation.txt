@@ -6,12 +6,12 @@
 =============================================
                     DECLARAÇÃO DE RESIGNAÇÃO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Eu, (NOME), atualmente no cargo de (nome completo do cargo), desejo renunciar ao departamento (nome do departamento) por motivo de (motivo).
-Comprometo-me a pagar a multa estabelecida pelos termos da rescisão do contrato, seja ele a prazo ou sem prazo, na estação da Central Command.
+Eu, {{AUTHOR.NAME}}, atualmente no cargo de {{AUTHOR.POSITION}}, desejo renunciar ao departamento {{DOCUMENT.FIELD "Nome do departamento"}} por motivo de {{DOCUMENT.FIELD "Motivo"}}.
+Comprometo-me a pagar a multa estabelecida pelos termos da rescisão do contrato, seja ele a prazo ou sem prazo, na estação do Comando Central.
 =============================================
                              [italic]Espaço para carimbos[/italic]
 

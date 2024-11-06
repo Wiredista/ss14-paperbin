@@ -6,12 +6,12 @@
 =============================================
         PEDIDO DE ALTERAÇÃO DE SALÁRIO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Eu, (NOME), no cargo de (nome completo do cargo), solicito a avaliação da possibilidade de aumento/redução do salário em (quantidade ou percentagem) para o funcionário (NOME) no cargo de (nome completo do cargo)/departamento (nome do departamento)/turno atual.
-Razão para o aumento/redução do salário:
+Eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, solicito a avaliação da possibilidade de {{DOCUMENT.FIELD "aumento/redução"}} do salário em {{DOCUMENT.FIELD "Quantidade ou porcentagem"}} para o funcionário {{DOCUMENT.FIELD "Funcionário"}} no cargo de {{DOCUMENT.FIELD "Cargo do funcionário"}}.
+Razão para o aumento/redução do salário: {{DOCUMENT.FIELD "Razão"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

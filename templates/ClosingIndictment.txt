@@ -6,16 +6,19 @@
 =============================================
                     ORDEM DE PRISÃO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Eu, (NOME), no cargo de (nome completo do cargo), redatorizo a prisão de (NOME), no cargo de (nome completo do cargo) devido à suspeita de cometer as seguintes infrações:
+Eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, redatorizo a prisão de {{DOCUMENT.FIELD "Nome"}}, no cargo de {{DOCUMENT.FIELD "Cargo"}} devido à suspeita de cometer as seguintes infrações:
+{{DOCUMENT.LIST "Artigos do Código Penal infringidos"}}
 
 Durante a investigação preliminar, foram encontradas evidências que indicam que o indivíduo cometeu a infração.
-Evidências diretas:
+Evidências diretas: 
+{{DOCUMENT.LIST "Evidências diretas"}}
 
-Evidências indiretas:
+Evidências indiretas: 
+{{DOCUMENT.LIST "Evidências indiretas"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

@@ -6,14 +6,15 @@
 =============================================
                 ORDEM DE PRODUÇÃO DE PRODUTO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Eu, (NOME), no cargo de (nome completo do cargo), solicito a produção de produtos pelo departamento (nome do departamento).
-Lista de produtos necessários:
+Eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, solicito a produção de produtos pelo departamento {{DOCUMENT.FIELD "Departamento"}}.
+Lista de produtos necessários: 
+{{DOCUMENT.LIST "Produtos necessários"}}
 
-Razão do pedido:
+Razão do pedido: {{DOCUMENT.FIELD "Razão do pedido"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

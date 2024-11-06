@@ -6,12 +6,13 @@
 =============================================
             SOLICITAÇÃO DE MODERNIZAÇÃO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Eu, (NOME), no cargo de (nome completo do cargo), solicito a modernização dos dispositivos em (nome do departamento ou objeto) devido a (razão do pedido).
+Eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, solicito a modernização dos dispositivos em {{DOCUMENT.FIELD "nome do departamento ou objeto"}} devido a {{DOCUMENT.FIELD "Razão"}}.
 Lista de modernizações:
+{{DOCUMENT.LIST "Modernizações necessárias"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

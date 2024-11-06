@@ -6,16 +6,19 @@
 =============================================
                     RELATÓRIO DE CONDIÇÃO TÉCNICA
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Foi realizada uma verificação (nome do sistema ou objeto), os resultados foram analisados, e uma análise das razões para o mau funcionamento do objeto foi conduzida.
-Causa da quebra do objeto:
+Foi realizada uma verificação {{DOCUMENT.FIELD "Nome do sistema ou objeto"}}, os resultados foram analisados, e uma análise das razões para o mau funcionamento do objeto foi conduzida.
+Causa da quebra do objeto: 
+    {{DOCUMENT.FIELD "Causa da quebra do objeto"}}
 
-Danos identificados no objeto:
+Danos identificados no objeto: 
+{{DOCUMENT.LIST "Danos identificados no objeto"}}
 
 Reparo realizado no objeto:
+    {{DOCUMENT.FIELD "Reparo realizado no objeto"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

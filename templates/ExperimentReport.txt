@@ -6,22 +6,27 @@
 =============================================
                     RELATÓRIO DE EXPERIMENTO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Descrição externa do objeto do experimento:
+Descrição externa do objeto do experimento: {{DOCUMENT.FIELD "Descrição externa do objeto do experimento"}}
 
 Experimentador(-es):
+{{DOCUMENT.LIST "Experimentador(-es)"}}
 
-Experimento nº...
-Descrição do experimento:
+Experimento nº: {{DOCUMENT.FIELD "Experimento nº"}}
+Descrição do experimento: 
+    {{DOCUMENT.FIELD "Descrição do experimento"}}
 
-Resultado esperado:
+Resultado esperado: 
+    {{DOCUMENT.FIELD "Resultado esperado"}}
 
 Equipamento utilizado:
+    {{DOCUMENT.FIELD "Equipamento utilizado"}}
 
 Resultado real:
+    {{DOCUMENT.FIELD "Resultado real"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

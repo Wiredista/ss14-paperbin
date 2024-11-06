@@ -6,13 +6,14 @@
 =============================================
                 PEDIDO DE EQUIPAMENTO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Eu, (NOME), no cargo de (nome completo do cargo), solicito a emissão do seguinte equipamento do departamento (nome do departamento)/equipamento pessoal:
+Eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, solicito a emissão do seguinte equipamento do departamento {{DOCUMENT.FIELD "Departamento de origem do equipamento"}}:
+{{DOCUMENT.LIST "Equipamentos solicitados e quantidade"}}
 
-Motivo para a obtenção do equipamento:
+Motivo para a obtenção do equipamento: {{DOCUMENT.FIELD "Motivo para a obtenção do equipamento"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

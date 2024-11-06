@@ -6,12 +6,13 @@
 =============================================
         DECISÃO DE INICIAR O JULGAMENTO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Eu, (NOME), no cargo de (nome completo do cargo), anuncio o início do processo judicial em relação a (NOME) devido à complexidade e ambiguidade do caso.
+Eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, anuncio o início do processo judicial em relação a {{DOCUMENT.FIELD "Nome"}} devido à complexidade e ambiguidade do caso.
 Infrações cometidas:
+{{DOCUMENT.LIST "Infrações cometidas"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

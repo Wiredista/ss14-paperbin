@@ -6,12 +6,12 @@
 =============================================
         SOLICITAÇÃO DE EUTANÁSIA
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Eu, (NOME), no cargo de (nome completo do cargo), solicito a assistência do departamento médico para realizar a eutanásia como tratamento médico devido a (indicar a razão para a solicitação). Estou ciente das consequências dessa decisão, e a equipe médica confirmou a razoabilidade e humanidade dessa decisão, observando os protocolos de eutanásia.
-Após o procedimento, solicito a eliminação do corpo por (método de eliminação), se possível.
+Eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, solicito a assistência do departamento médico para realizar a eutanásia como tratamento médico devido a {{DOCUMENT.FIELD "Razão da solicitação"}}. Estou ciente das consequências dessa decisão, e a equipe médica confirmou a razoabilidade e humanidade dessa decisão, observando os protocolos de eutanásia.
+Após o procedimento, solicito a eliminação do corpo por {{DOCUMENT.FIELD "Método de eliminação do corpo"}}, se possível.
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

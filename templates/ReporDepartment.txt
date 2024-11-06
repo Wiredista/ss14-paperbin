@@ -6,16 +6,16 @@
 =============================================
                             RELATÓRIO DE DESEMPENHO DO DEPARTAMENTO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Número de funcionários no departamento:
-Número de estagiários:
-Funcionários inativos do departamento:
-Nome completo, cargo, razão
-Grau de prontidão para o objetivo:
-Condição geral do departamento:
+Número de funcionários no departamento: {{DOCUMENT.FIELD "Número de funcionários"}}
+Número de estagiários: {{DOCUMENT.FIELD "Número de estagiários"}}
+Funcionários inativos do departamento: 
+{{DOCUMENT.LIST "Funcionários inativos do departamento - Nome completo, cargo, razão"}}
+Grau de prontidão para o objetivo: {{DOCUMENT.FIELD "Grau de prontidão para o objetivo"}}
+Condição geral do departamento: {{DOCUMENT.FIELD "Condição geral do departamento"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

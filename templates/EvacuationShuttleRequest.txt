@@ -6,12 +6,12 @@
 =============================================
                 PEDIDO DE NAVE DE EVACUAÇÃO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Respeitável Comando Central! Eu, (NOME), no cargo de (nome completo do cargo), solicito a ativação dos protocolos de evacuação e o envio da nave de evacuação, após a decisão de encerrar o turno.
-Motivo para o encerramento do turno:
+Respeitável Comando Central! Eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, solicito a ativação dos protocolos de evacuação e o envio da nave de evacuação, após a decisão de encerrar o turno.
+Motivo para o encerramento do turno: {{DOCUMENT.FIELD "Motivo para o encerramento do turno"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

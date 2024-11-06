@@ -6,11 +6,12 @@
 =============================================
                         ORDEM DE ELOGIO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Eu, (NOME), no cargo de (nome completo do cargo), concedo a (NOME) no cargo de (nome completo do cargo do homenageado) uma medalha/diploma/lembrança/prêmio no valor de (valor do prêmio) pelos seguintes méritos:
+Eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, concedo a {{DOCUMENT.FIELD "Homenageado"}} no cargo de {{DOCUMENT.FIELD "Cargo do homenageado"}} uma medalha/diploma/lembrança/prêmio no valor de {{DOCUMENT.FIELD "Valor do prêmio"}} pelos seguintes méritos:
+{{DOCUMENT.LIST "Méritos"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

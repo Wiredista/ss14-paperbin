@@ -6,21 +6,24 @@
 =============================================
                             RELATÓRIO DA REUNIÃO DOS CHEFES
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Razão para convocar a Reunião dos Chefes:
-Formulação da questão apresentada aos Chefes:
-Número de votos "A favor":
+Razão para convocar a Reunião dos Chefes: {{DOCUMENT.FIELD "Razão para convocar a Reunião dos Chefes"}}
+Formulação da questão apresentada aos Chefes: {{DOCUMENT.FIELD "Formulação da questão apresentada aos Chefes"}}
+Número de votos "A favor": {{DOCUMENT.FIELD "Número de votos 'A favor'"}}
 Votantes "A favor":
+{{DOCUMENT.LIST "Votantes 'A favor'"}}
 
-Número de votos "Contra":
-Votantes "Contra":
+Número de votos "Contra": {{DOCUMENT.FIELD "Número de votos 'Contra'"}}
+Votantes "Contra": 
+{{DOCUMENT.LIST "Votantes 'Contra'"}}
 
-Número de abstenções:
+Número de abstenções: {{DOCUMENT.FIELD "Número de abstenções"}}
 Abstencionistas:
+{{DOCUMENT.LIST "Abstencionistas"}}
 
-Decisão da Reunião dos Chefes:
+Decisão da Reunião dos Chefes: {{DOCUMENT.FIELD "Decisão da Reunião dos Chefes"}}
 =============================================
                              [italic]Espaço para carimbos[/italic]

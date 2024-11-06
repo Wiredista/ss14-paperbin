@@ -6,15 +6,17 @@
 =============================================
             CERTIFICADO DE CASAMENTO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Eu, (NOME), no cargo de (nome completo do cargo), celebro o casamento entre:
- (NOME), no cargo de (nome completo do cargo)
- ...
- (NOME), no cargo de (nome completo do cargo)
+Eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, celebro o casamento entre:
+    {{DOCUMENT.FIELD "Conjugue 1"}}, no cargo de {{DOCUMENT.FIELD "Cargo do Conjugue 1"}}
+    {{DOCUMENT.FIELD "Conjugue 2"}}, no cargo de {{DOCUMENT.FIELD "Cargo do Conjugue 2"}}
+
 Após o casamento, os cônjuges receberam os seguintes nomes completos:
+    {{DOCUMENT.FIELD "Nome completo do Conjugue 1"}}
+    {{DOCUMENT.FIELD "Nome completo do Conjugue 2"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

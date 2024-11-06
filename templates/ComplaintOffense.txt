@@ -6,12 +6,13 @@
 =============================================
                     RECLAMAÇÃO DE INFRAÇÃO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Eu, (NOME), no cargo de (nome completo do cargo), acredito que (NOME), no cargo de (nome completo do cargo), violou o Código Corporativo porque (razão).
-O que aconteceu do meu ponto de vista:
+Eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, acredito que {{DOCUMENT.FIELD "Nome do reclamado"}}, no cargo de {{DOCUMENT.FIELD "Cargo do reclamado"}}, violou o Código Corporativo pelos motivos: {{DOCUMENT.FIELD "Motivos"}}.
+O que aconteceu do meu ponto de vista: 
+    {{DOCUMENT.FIELD "Descrição"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

@@ -6,11 +6,12 @@
 =============================================
                         ORDEM DE DEMISSÃO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Eu, (NOME), no cargo de (nome completo do cargo), ordeno a demissão do funcionário (NOME) do departamento (nome do departamento) no cargo de (nome completo do cargo do demitido) por motivo de:
+Eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, ordeno a demissão do funcionário {{DOCUMENT.FIELD "Funcionário"}} do departamento {{DOCUMENT.FIELD "Departamento"}} no cargo de {{DOCUMENT.FIELD "Cargo do funcionário"}} por motivo de:
+    {{DOCUMENT.FIELD "Motivo"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

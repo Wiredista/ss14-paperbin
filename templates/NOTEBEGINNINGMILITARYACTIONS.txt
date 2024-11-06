@@ -6,11 +6,11 @@
 =============================================
                 NOTA SOBRE O INÍCIO DAS AÇÕES MILITARES
 =============================================
-Tempo desde o início do turno e data:
-Apelido do agente:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Apelido do agente: {{AUTHOR.NAME}}
 
 Desprezíveis ratos corporativos da NanoTrasen! O Sindicato anuncia oficialmente o início das ações militares contra vocês, bem como o início da operação para exterminá-los.
-Razão para apresentação da nota:
+Razão para apresentação da nota: {{DOCUMENT.FIELD "Razão para apresentação da nota"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

@@ -6,14 +6,15 @@
 =============================================
                 ORDEM DE SOLICITAÇÃO DE EQUIPAMENTO ESPECIAL
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Eu, (NOME), no cargo de (nome completo do cargo), solicito o fornecimento de equipamento especial para a estação pelo Comando Central.
+Eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, solicito o fornecimento de equipamento especial para a estação pelo Comando Central.
 Lista do equipamento solicitado:
+{{DOCUMENT.LIST "Equipamento solicitado"}}
 
-Razão da solicitação:
+Razão da solicitação: {{DOCUMENT.FIELD "Razão da solicitação"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

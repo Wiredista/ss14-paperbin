@@ -6,16 +6,16 @@
 =============================================
         ORDEM DE RECONHECIMENTO DE INTELIGÊNCIA DE CRIATURA
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Durante os testes, foram identificados sinais de atividade cerebral superior e inteligência desta criatura, sua capacidade de pensar, aprender, compreender moralidade e ter senso comum em suas ações. Assim, eu, (NOME), no cargo de (nome completo do cargo), com base nos princípios de igualdade de direitos de todas as criaturas inteligentes, conforme estabelecido pela ORPS, reconheço esta criatura como inteligente.
-Aparência da criatura:
+Durante os testes, foram identificados sinais de atividade cerebral superior e inteligência desta criatura, sua capacidade de pensar, aprender, compreender moralidade e ter senso comum em suas ações. Assim, eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, com base nos princípios de igualdade de direitos de todas as criaturas inteligentes, conforme estabelecido pela ORPS, reconheço esta criatura como inteligente.
+Aparência da criatura: {{DOCUMENT.FIELD "Aparência da criatura"}}
 
-Nome completo atribuído à criatura:
+Nome completo atribuído à criatura: {{DOCUMENT.FIELD "Nome completo da criatura"}}
 
-A criatura é aceita/não aceita como passageira na estação até o final do turno.
+A criatura é {{DOCUMENT.FIELD "aceita/não aceita (como passageira)"}} como passageira na estação até o final do turno.
 =============================================
                              [italic]Espaço para carimbos[/italic]
 

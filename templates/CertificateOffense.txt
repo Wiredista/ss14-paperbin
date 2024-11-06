@@ -6,19 +6,19 @@
 =============================================
             CERTIFICADO DE INFRAÇÃO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Eu, (NOME), no cargo de (nome completo do cargo), certifico infrações/voluntariamente admito ter cometido infrações previstas pelos artigos:
-(enumeração de artigos)
+Eu, {{AUTHOR.NAME}}, no cargo de {{AUTHOR.POSITION}}, certifico infrações/voluntariamente admito ter cometido infrações previstas pelos artigos:
+{{DOCUMENT.LIST "Artigos do Código Penal"}}
 Sobre este incidente, posso esclarecer o seguinte.
-Local do crime:
-Motivações para cometer o crime:
-Contra quem o crime foi cometido:
-Natureza e extensão do dano causado pelo crime:
-Cúmplices no crime:
-Cronologia completa dos eventos:
+Local do crime: {{DOCUMENT.FIELD "Local do crime"}}
+Motivações para cometer o crime: {{DOCUMENT.FIELD "Motivações para cometer o crime"}}
+Contra quem o crime foi cometido: {{DOCUMENT.FIELD "Contra quem o crime foi cometido"}}
+Natureza e extensão do dano causado pelo crime: {{DOCUMENT.FIELD "Natureza e extensão do dano causado pelo crime"}}
+Cúmplices no crime: {{DOCUMENT.FIELD "Cúmplices no crime"}}
+Cronologia completa dos eventos: {{DOCUMENT.FIELD "Cronologia completa dos eventos"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]

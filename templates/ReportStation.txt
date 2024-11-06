@@ -6,17 +6,21 @@
 =============================================
                             RELATÓRIO DE SITUAÇÃO
 =============================================
-Tempo desde o início do turno e data:
-Redator do documento:
-Posição do redator:
+Tempo desde o início do turno e data: {{STATION.TIME}}
+Redator do documento: {{AUTHOR.NAME}}
+Posição do redator: {{AUTHOR.POSITION}}
 
-Objetivo:
-Status da realização do objetivo:
-Código de nível de ameaça:
-Razão para estabelecer o código:
-Ameaças ativas:
+Objetivo: {{DOCUMENT.FIELD "Objetivo"}}
+Status da realização do objetivo: {{DOCUMENT.FIELD "Status da realização do objetivo"}}
+Código de nível de ameaça: {{DOCUMENT.FIELD "Código de nível de ameaça"}}
+Razão para estabelecer o código: {{DOCUMENT.FIELD "Razão para estabelecer o código"}}
+Ameaças ativas: 
+{{DOCUMENT.LIST "Ameaças ativas"}}
+
 Perdas entre a tripulação:
-Situação atual:
+{{DOCUMENT.LIST "Perdas entre a tripulação"}}
+
+Situação atual: {{DOCUMENT.FIELD "Situação atual"}}
 
 =============================================
                              [italic]Espaço para carimbos[/italic]
