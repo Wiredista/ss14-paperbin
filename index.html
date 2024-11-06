@@ -103,6 +103,11 @@
                 let option = $("<option>").val(value).text(key);
                 $("select").append(option);
             }
+
+            // Select first template
+            $("#templateSelector").val($("#templateSelector option:first").val());
+            $("#templateSelector").trigger("change");
+            $("#templateSelector").trigger("input");
         });
 
         // Preload base templates for performance
@@ -264,11 +269,6 @@
 
             // Select NanoTrasen
             $("radio[name=syndicateOrNano]").val("nano");
-
-            // Select first template
-            $("#templateSelector").val($("#templateSelector option:first").val());
-            $("#templateSelector").trigger("change");
-            $("#templateSelector").trigger("input");
         });
     </script>
 
