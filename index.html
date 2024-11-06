@@ -91,7 +91,7 @@
         <!-- Output -->
         <div class="form-group mt-3">
             <label for="ouput">Saída:</label>
-            <textarea name="" id="ouput" class="form-control" rows="5"></textarea>
+            <textarea name="" id="ouput" class="form-control" rows="25"></textarea>
             <button class="btn btn-primary mt-2" onclick="$('#ouput').select(); document.execCommand('copy');">Copiar</button>
         </div>
     </form>
@@ -188,12 +188,28 @@
             outData = outData.replaceAll("{{AUTHOR.POSITION}}", authorRank);
 
             // Advanced document parsing
+            //    Fields
             const fields = outData.match(/{{DOCUMENT.FIELD "(.*?)"}}/g);
             if (fields != null) {
                 for (let i = 0; i < fields.length; i++) {
                     const field = fields[i].match(/{{DOCUMENT.FIELD "(.*?)"}}/)[1];
                     const value = $("#documentField-" + i).val();
                     outData = outData.replace(`{{DOCUMENT.FIELD "${field}"}}`, value);
+                }
+            }
+
+            //    Lists
+            const lists = outData.match(/{{DOCUMENT.LIST "(.*?)"}}/g);
+            if (lists != null) {
+                for (let i = 0; i < lists.length; i++) {
+                    const list = lists[i].match(/{{DOCUMENT.LIST "(.*?)"}}/)[1];
+                    const value = $("#documentList-" + i).val();
+                    const items = value.split("\n");
+                    let listData = "";
+                    for (let j = 0; j < items.length; j++) {
+                        listData += `    - ${items[j]}\n`;
+                    }
+                    outData = outData.replace(`{{DOCUMENT.LIST "${list}"}}`, listData);
                 }
             }
 
@@ -208,19 +224,35 @@
             const path = "templates/" + template;
             const data = await $.get(path);
             
+            $("#template-fields").html("");
+
             // Get fields
             const fields = data.match(/{{DOCUMENT.FIELD "(.*?)"}}/g);
-            if (fields == null) { $("#template-fields").html(""); return; }
-
-            let html = "";
-            for (let i = 0; i < fields.length; i++) {
-                const field = fields[i].match(/{{DOCUMENT.FIELD "(.*?)"}}/)[1];
-                html += `<div class="form-group">
-                            <label for="documentField-${i}">${field}:</label>
-                            <input type="text" id="documentField-${i}" class="form-control">
-                        </div>`;
+            if (fields != null) { 
+                for (let i = 0; i < fields.length; i++) {
+                    const field = fields[i].match(/{{DOCUMENT.FIELD "(.*?)"}}/)[1];
+                    const html = `<div class="form-group">
+                                      <label for="documentField-${i}">${field}:</label>
+                                      <input type="text" id="documentField-${i}" class="form-control">
+                                  </div>`;
+                    $("#template-fields").append(html);
+                }
             }
-            $("#template-fields").html(html);
+
+            // Get lists
+            const lists = data.match(/{{DOCUMENT.LIST "(.*?)"}}/g); console.log(lists);
+            if (lists != null) {
+                for (let i = 0; i < lists.length; i++) {
+                    const list = lists[i].match(/{{DOCUMENT.LIST "(.*?)"}}/)[1];
+                    const html = `<div class="form-group">
+                                      <label for="documentList-${i}">${list}:</label>
+                                      <textarea id="documentList-${i}" class="form-control" placeholder="Item 1\nItem 2\nItem 3" rows="3"></textarea>
+                                  </div>`;
+                    $("#template-fields").append(html);
+                }
+            }
+
+
         });
 
         // Initial form state
@@ -235,6 +267,7 @@
 
             // Select first template
             $("#templateSelector").val($("#templateSelector option:first").val());
+            $("#templateSelector").trigger("change");
             $("#templateSelector").trigger("input");
         });
     </script>
