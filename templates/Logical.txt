@@ -1,0 +1,42 @@
+[color=#bf3030]
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀█▄
+█  ▀██  █▄    █          █
+█      ▀  █▀█▄█  ▄      █  [head=1]Nanotrasen[/head]
+█          █    ▀█  ██▄  █ 
+▀█▄▄▄▄▄▄▄▄▄▄▄▄▄▄█  [head=1]Technologies[/head]
+
+▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀
+
+        [head=1]◄Informações do redigente►[/head][/color]
+
+[bold][color=#bf3030]Nome completo/social:[/color][/bold]
+
+[bold][color=#bf3030]Genero:[/bold]
+(  )Masculino               (   )Feminino
+(  )Não-Binário             (   )Outro
+Ocupação:
+
+        [head=1]◄Acusação►[/head][/color]
+
+[color=#bf3030][head=3]▼Dados do acusado▼[/head][/color]
+
+[bold][color=#bf3030]Nome completo/social:[/color][/bold]
+
+[bold][color=#bf3030]Genero:[/bold]
+(  )Masculino               (   )Feminino
+(  )Não-Binário             (   )Outro[/color]
+[bold][color=#bf3030]Ocupação: [/color][/bold]
+[bold][color=#bf3030]Sentença: [/color][/bold]
+[bold][color=#bf3030]Acusações: [/color][/bold]
+
+[color=#bf3030][head=3]▼ Informação da prisão ▼[/head][/color]
+
+[bold][color=#bf3030]Lista de Contrabando:[/color][/bold]
+[color=#bf3030]►[/color]
+[color=#bf3030]►[/color]
+[color=#bf3030]►[/color]
+
+[bold][color=#bf3030]Lista de equipamentos/armamentos restritos:[/color][/bold]
+[color=#bf3030]►[/color]
+[color=#bf3030]►[/color]
+[color=#bf3030]►[/color]
