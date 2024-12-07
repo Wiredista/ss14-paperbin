@@ -47,4 +47,4 @@ Motivo para a obtenção do equipamento: {{DOCUMENT.FIELD "Motivo para a obtenç
 ```
 ## Licença
 
-Este projeto é licenciado sob a licença Creative Commons Atribuição-CompartilhaIgual 3.0 Não Adaptada (CC BY-SA 3.0) - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto é licenciado sob a licença Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0) - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
